@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Rentals for Tourists</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .vehicle {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+        .vehicle img {
+            max-width: 200px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .vehicle-details {
+            flex-grow: 1;
+        }
+        .vehicle-details h2 {
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+        .vehicle-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .rate {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #qr-code-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #qr-code {
+            margin-top: 10px;
+        }
+        .note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #6c757d;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Vehicle Rentals for Tourists</h1>
+
+        <div class="vehicle">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Ow-jdSFfiCijZRPsQz6GQcoF61ahECtZMA&s" alt="Car">
+            <div class="vehicle-details">
+                <h2>Car</h2>
+                <p>Comfortable and convenient for small families or groups.</p>
+                <p class="rate">Rate: ₹3,500 per day</p>
+                <a href="#" class="btn" onclick="calculateRate(3500)">Rent Now</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Hyundai-Alcazar-130720212215.jpg" alt="SUV">
+            <div class="vehicle-details">
+                <h2>SUV</h2>
+                <p>Spacious and perfect for off-road adventures.</p>
+                <p class="rate">Rate: ₹5,600 per day</p>
+                <a href="#" class="btn" onclick="calculateRate(5600)">Rent Now</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6jbW498h5YJy5D9ABZmmB9UiRtwTOUSERA&s" alt="Van">
+            <div class="vehicle-details">
+                <h2>Van</h2>
+                <p>Ideal for larger groups and families.</p>
+                <p class="rate">Rate: ₹7,000 per day</p>
+                <a href="#" class="btn" onclick="calculateRate(7000)">Rent Now</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/296512301/KC/YS/RW/187114653/yamaha-fz-x-ride-free-bike.jpg" alt="Bike">
+            <div class="vehicle-details">
+                <h2>Bike</h2>
+                <p>Perfect for solo travelers and quick trips around the city.</p>
+                <p class="rate">Rate: ₹1,400 per day</p>
+                <a href="#" class="btn" onclick="calculateRate(1400)">Rent Now</a>
+            </div>
+        </div>
+
+        <div class="vehicle">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYhnwaj228sTtxFaSHLYJ-HD_sWOIj3sVkdw&s" alt="Scooter">
+            <div class="vehicle-details">
+                <h2>Scooter</h2>
+                <p>Easy to maneuver and great for short distances.</p>
+                <p class="rate">Rate: ₹1,000 per day</p>
+                <a href="#" class="btn" onclick="calculateRate(1000)">Rent Now</a>
+            </div>
+        </div>
+
+        <div id="qr-code-container"></div>
+
+        <div class="note">
+            Please do the payment here
+        </div>
+        
+        <a href="file:///C:/Users/SRI/Desktop/projects/rought.html/main.html" class="back-btn">Back</a>
+    </div>
+
+    <script>
+        function calculateRate(rate) {
+            const days = prompt("Enter the number of days:");
+            if (days !== null && days !== "") {
+                const totalCost = rate * parseInt(days);
+                alert(`The total cost for ${days} days is ₹${totalCost}`);
+
+                const qrCodeContainer = document.getElementById('qr-code-container');
+                qrCodeContainer.innerHTML = `
+                    <h2>pay and take screenshot After clicking ok</h2>
+                    <p>Website: voyagenest</p>
+                    <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=voyagenest&size=150x150" alt="QR Code">
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
