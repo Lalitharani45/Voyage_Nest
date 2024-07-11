@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Chat AI - Andhra Pradesh and Telangana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .message {
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 70%;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: #e9e9e9;
+        }
+
+        footer {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .input-container {
+            display: flex;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .input-container button {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Voyage Chat AI - Andhra Pradesh and Telangana</h1>
+    </header>
+    <div class="chat-container" id="chat-container">
+        <div class="message bot-message">
+            <p>Welcome! How can I assist you with your travel plans to Andhra Pradesh and Telangana?</p>
+        </div>
+    </div>
+    <div class="input-container">
+        <input type="text" id="user-input" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <footer>
+        <p>&copy; 2024 Travel Chat AI. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const messageText = userInput.value.trim();
+            if (messageText !== '') {
+                addMessage(messageText, 'user');
+                userInput.value = '';
+                setTimeout(() => generateBotResponse(messageText), 1000);
+            }
+        }
+
+        function addMessage(text, sender) {
+            const message = document.createElement('div');
+            message.classList.add('message', `${sender}-message`);
+            message.innerHTML = `<p>${text}</p>`;
+            chatContainer.appendChild(message);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function generateBotResponse(message) {
+            let response = '';
+            if (message.toLowerCase().includes('itinerary')) {
+                response = generateItineraryResponse(message);
+            } else if (message.toLowerCase().includes('weather')) {
+                response = generateWeatherResponse();
+            } else if (message.toLowerCase().includes('packing')) {
+                response = 'For your trip, pack comfortable walking shoes, lightweight clothing, sunscreen, sunglasses, and travel adapters.';
+            } else {
+                response = 'I\'m sorry, I didn\'t understand that. You can ask about itineraries, weather, or packing lists for Andhra Pradesh and Telangana.';
+            }
+            addMessage(response, 'bot');
+        }
+
+        function generateItineraryResponse(message) {
+            const daysMatch = message.match(/(\d+)\s*(day|days)/i);
+            if (daysMatch) {
+                const days = parseInt(daysMatch[1], 10);
+                let itinerary = `Here's a ${days}-day itinerary for Hyderabad:\n`;
+                for (let i = 1; i <= days; i++) {
+                    itinerary += `<br><strong>Day ${i}:</strong> `;
+                    if (i % 4 === 1) {
+                        itinerary += 'Historical and Cultural Exploration\n';
+                        itinerary += '<ul>\n';
+                        itinerary += '<li><strong>Morning:</strong> Visit Charminar and Laad Bazaar.</li>\n';
+                        itinerary += '<li>Mecca Masjid.</li>\n';
+                        itinerary += '<li><strong>Afternoon:</strong> Salar Jung Museum.</li>\n';
+                        itinerary += '<li><strong>Evening:</strong> Chowmahalla Palace.</li>\n';
+                        itinerary += '<li>Dinner: Try Hyderabadi Biryani and Haleem at Paradise or Shadab.</li>\n';
+                        itinerary += '</ul>\n';
+                    } else if (i % 4 === 2) {
+                        itinerary += 'Modern Attractions and Shopping\n';
+                        itinerary += '<ul>\n';
+                        itinerary += '<li><strong>Morning:</strong> Hussain Sagar Lake.</li>\n';
+                        itinerary += '<li><strong>Afternoon:</strong> Birla Mandir, Lumbini Park.</li>\n';
+                        itinerary += '<li><strong>Evening:</strong> Necklace Road, Shopping at Inorbit Mall or GVK One.</li>\n';
+                        itinerary += '<li>Dinner: Try Mirchi ka Salan and Double ka Meetha.</li>\n';
+                        itinerary += '</ul>\n';
+                    } else if (i % 4 === 3) {
+                        itinerary += 'Heritage Sites and Local Markets\n';
+                        itinerary += '<ul>\n';
+                        itinerary += '<li><strong>Morning:</strong> Golconda Fort.</li>\n';
+                        itinerary += '<li><strong>Afternoon:</strong> Qutub Shahi Tombs, Lunch at Rayalaseema Ruchulu.</li>\n';
+                        itinerary += '<li><strong>Evening:</strong> Shilparamam.</li>\n';
+                        itinerary += '<li>Dinner: Irani Chai and Osmania Biscuits at Nimrah Café & Bakery.</li>\n';
+                        itinerary += '</ul>\n';
+                    } else {
+                        itinerary += 'Nature and Relaxation\n';
+                        itinerary += '<ul>\n';
+                        itinerary += '<li><strong>Morning:</strong> Ramoji Film City.</li>\n';
+                        itinerary += '<li><strong>Afternoon:</strong> Lunch at Ramoji Film City.</li>\n';
+                        itinerary += '<li><strong>Evening:</strong> KBR National Park, Shopping at Banjara Hills or Jubilee Hills.</li>\n';
+                        itinerary += '<li>Dinner: Olive Bistro or Chutneys.</li>\n';
+                        itinerary += '</ul>\n';
+                    }
+                }
+                return itinerary;
+            } else {
+                return 'Please specify the number of days for the itinerary.';
+            }
+        }
+
+        function generateWeatherResponse() {
+            const today = new Date();
+            let weather = 'Here is the weather forecast for the next 7 days:\n';
+            for (let i = 0; i < 7; i++) {
+                const forecastDate = new Date(today);
+                forecastDate.setDate(today.getDate() + i);
+                const dayName = forecastDate.toLocaleDateString('en-US', { weekday: 'long' });
+                weather += `${dayName}: Sunny, 30°C\n`;
+            }
+            return weather;
+        }
+    </script>
+</body>
+</html>
