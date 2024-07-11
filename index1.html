@@ -176,25 +176,25 @@
         document.getElementById("cta-link").style.display = "block";
         
         // Redirect to the corresponding itinerary based on resultType
-        let itineraryUrl = "index3.html"; // Adjust URL as needed
+        let index3Url = "index3.html"; // Adjust URL as needed
         switch (resultType.toLowerCase()) {
             case "beach":
-                itineraryUrl += "beach";
+                index3Url += "beach";
                 break;
             case "nature":
-                itineraryUrl += "nature";
+                index3Url += "nature";
                 break;
             case "history":
-                itineraryUrl += "history";
+                index3Url += "history";
                 break;
             case "cuisine":
-                itineraryUrl += "cuisine";
+                index3yUrl += "cuisine";
                 break;
             default:
                 break;
         }
 
-        document.getElementById("cta-link").setAttribute("href", itineraryUrl);
+        document.getElementById("cta-link").setAttribute("href", index3Url);
     }
 
     // Start quiz on page load
