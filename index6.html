@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoyageNest - Activities in Telangana and Andhra Pradesh</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f4f8;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            background-color: #E1F5FE;
+            color: #0288D1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        h3 {
+            background-color: #FFEB3B;
+            color: #F57F17;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #E0E0E0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .button-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        input[type='button'] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        input[type='button']:hover {
+            background-color: #388E3C;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VoyageNest</h1>
+        <p>Discover the best activities in Telangana and Andhra Pradesh</p>
+    </header>
+
+    <div class="button-container">
+        <input type="button" value="Back" onClick="history.go(-1)">
+    </div>
+    
+    <div class="container">
+        <h2>Activities in Andhra Pradesh</h2>
+        <ul>
+            <li>
+                <h3 onclick="openModal('vizag')">Beach Activities in Visakhapatnam</h3>
+            </li>
+            <li>
+                <h3 onclick="openModal('belum')">Exploring Belum Caves</h3>
+            </li>
+            <li>
+                <h3 onclick="openModal('tirupati')">Pilgrimage to Tirupati</h3>
+            </li>
+            <li>
+                <h3 onclick="openModal('nagarjuna')">Water Sports at Nagarjuna Sagar</h3>
+            </li>
+        </ul>
+
+        <h2>Activities in Telangana</h2>
+        <ul>
+            <li>
+                <h3 onclick="openModal('hyderabad')">Heritage Walk in Hyderabad</h3>
+            </li>
+            <li>
+                <h3 onclick="openModal('ramoji')">Visit to Ramoji Film City</h3>
+            </li>
+            <li>
+                <h3 onclick="openModal('ananthagiri')">Hiking at Ananthagiri Hills</h3>
+            </li>
+            <li>
+                <h3 onclick="openModal('kawal')">Wildlife Safari at Kawal Wildlife Sanctuary</h3>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(activity) {
+            var modalContent = {
+                'vizag': `<h2>Beach Activities in Visakhapatnam</h2>
+                          <p>Enjoy surfing, beach volleyball, and sunbathing on the golden beaches of Visakhapatnam. Key attractions include RK Beach, Rushikonda Beach, and Yarada Beach.</p>
+                          <div class="gallery">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaa7nalo0OASdfrJkx92kUQXfb5EbBZ1rYQA&s" alt="RK Beach">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61gIWKLEDw_QCIlgPTreodOG1lJLYfJABIg&s" alt="Rushikonda Beach">
+                              <img src="https://static2.tripoto.com/media/filter/nt/img/45758/TripDocument/1547635267_dsc_0150.jpg.webp" alt="Yarada Beach">
+                          </div>`,
+                'belum': `<h2>Exploring Belum Caves</h2>
+                          <p>Adventure into the depths of the second-largest caves in India with guided tours. Explore the intricate formations and learn about the history and geology of the caves.</p>
+                          <div class="gallery">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3suXnnk0IRXvYLv43Fykvxvrm9wC7ps-npw&s" alt="Belum Caves">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEaHYN-o3BYHAL7br3tCq700lqPLgeTcB_Dg&s" alt="Stalactites">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSLomJlcu_8npSMu2bskwsuKRehvRSK0QDsg&s" alt="Cave Entrance">
+                          </div>`,
+                'tirupati': `<h2>Pilgrimage to Tirupati</h2>
+                             <p>Experience the spiritual journey to one of the most visited pilgrimage sites in India. Visit the Sri Venkateswara Temple and explore the rich cultural heritage of the region.</p>
+                             <div class="gallery">
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaaAH7Uw9KQXOvs1D9o-5MoTb8cd-A3iwv_A&s" alt="Tirupati Temple">
+                                 <img src="https://www.prokerala.com/news/photos/imgs/1200/processional-deity-of-lord-malayappaswamy-taken-out-around-four-mada-997974.jpg" alt="Devotees">
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOCx4QlKtdy9ahskT_x6XcIMkvGs-QXWlNwg&s" alt="Temple Architecture">
+                             </div>`,
+                'nagarjuna': `<h2>Water Sports at Nagarjuna Sagar</h2>
+                              <p>Engage in various water sports and boat rides at this massive dam site. Enjoy activities like jet skiing, speed boating, and scenic boat tours.</p>
+                              <div class="gallery">
+                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKAZGINs4n5HytsCrQZnkz8l1O8fI_GvSoA&s" alt="Nagarjuna Sagar Dam">
+                                  <img src="https://cms.tgtdc.in/fetch?payload=c091be58-15be-443b-9acf-25b4b0acb23b.jpg" alt="Water Sports">
+                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdqG-5fz_iJwsErZvim1R69N9YB4CJ_VwCEw&s" alt="Boat Ride">
+                              </div>`,
+                'hyderabad': `<h2>Heritage Walk in Hyderabad</h2>
+                              <p>Explore the rich history of Hyderabad with a guided heritage walk through its old streets. Discover iconic landmarks like Charminar, Mecca Masjid, and the vibrant Laad Bazaar.</p>
+                              <div class="gallery">
+                                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWNimN0K9qlcuisVfZwgoObaVtZmlQiDuAUQ&s" alt="Charminar">
+                                  <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/9a/46.jpg" alt="Mecca Masjid">
+                                  <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/9c/3c.jpg" alt="Laad Bazaar">
+                              </div>`,
+                'ramoji': `<h2>Visit to Ramoji Film City</h2>
+                           <p>Take a tour of the world’s largest film city and enjoy various shows and attractions. Experience behind-the-scenes of movie making and enjoy theme-based entertainment.</p>
+                           <div class="gallery">
+                               <img src="https://media1.thrillophilia.com/filestore/1extmjt4zo3pvjzzc533bijzmlql_DHL_7798-2.jpg?w=400&dpr=2" alt="Ramoji Film City Entrance">
+                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAyf_bVoCJ3JkZjyPNwmp9_eDS1hUVBh9L1A&s" alt="Film Sets">
+                               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzUk6tHMxIBWICfjeDvDwFjQ_hwkDW1OnfYg&s" alt="Entertainment Shows">
+                           </div>`,
+                'ananthagiri': `<h2>Hiking at Ananthagiri Hills</h2>
+                                <p>Enjoy a scenic hike through the lush green forests and hills in Vikarabad. Discover beautiful viewpoints, waterfalls, and diverse flora and fauna.</p>
+                                <div class="gallery">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8hMwLiBww59wa0W5vw3r-FbLhHGPsZR9vGA&s" alt="Ananthagiri Hills">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxKNPN_uiCiCQ3i4IWa6gy-5Hgzb4DCgP7Jg&s" alt="Forest Trail">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj8mFqV6r-oi3IhR323gnirobsBCsxtkEzvUJMQ04fQB_CUtzXm3NJ30wJUrnfLYseqak&usqp=CAU" alt="Waterfall">
+                                </div>`,
+                'kawal': `<h2>Wildlife Safari at Kawal Wildlife Sanctuary</h2>
+                          <p>Experience a thrilling wildlife safari and spot various species in their natural habitat. Look out for tigers, leopards, deer, and a variety of birds.</p>
+                          <div class="gallery">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4qILyMOaimQdZU6Ew7RE4By18lAQWBrSd5w&s" alt="Kawal Wildlife Sanctuary">
+                              <img src="https://www.holidify.com/images/cmsuploads/compressed/Kawal_20200403152937_20200403154212.jpg" alt="Wildlife Safari">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFCrpjYX6dvMK0OewzZa5p1OLm-Z6e_7SuQ&s" alt="Animals in Sanctuary">
+                          </div>`
+            };
+
+            document.getElementById('modal-body').innerHTML = modalContent[activity];
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
