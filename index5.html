@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotels in Andhra Pradesh and Telangana</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStD_GsTnblaguTaCOPNEVIBtVWlTiYjzlqmA&s') no-repeat center center fixed;
+        background-size: cover;
+    }
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        background-color: #f0f0f0;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+    }
+    img.hotel-img {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        border-radius: 4px;
+    }
+    .hotel-details {
+        flex-grow: 1;
+    }
+    .price {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .selectors {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .selectors select {
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .button-container {
+        text-align: right;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    input[type='button'] {
+        background-color: navy;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    input[type='button']:hover {
+        background-color: #001f4d;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="button-container">
+        <input type="button" value="Back" onClick="history.go(-1)">
+    </div>
+
+    <h1>Hotels in Andhra Pradesh and Telangana</h1>
+
+    <h2>Andhra Pradesh</h2>
+    <h3>Hotels & HomeStays</h3>
+    <ul>
+        <li>
+            <img src="https://lh3.googleusercontent.com/proxy/drcdGsC1ALkTKMdFCm_zdo8zTTRUpi5JQwTrNCl38LBlPoVqR2cWYqbijN7_Q54llsMF8auNbA_eG4I03CL5HzKdkhgaCAvX5DnZ_eVAvwUIbJ_fvrBxrn0PFzoCFBsf3lO3m6vWbvO874nqOsITeNk1pyL3HzU=w574-h384-n-k-rw-no-v1" alt="Hotel Name" class="hotel-img">
+            <div class="hotel-details">
+                <div class="price">Price: ₹10000/night</div>
+                <div>Welcomhotel By ITC Hotels, Devee Grand Bay, Visakhapatnam</div>
+                <div class="selectors">
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <select name="children">
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <select name="rooms">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <select name="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMzPL-TIwyHdInHNiDGqgoiQrTml_wlD0KqicM3=w960-h720-n-k-rw-no-v1" alt="Hotel Name" class="hotel-img">
+            <div class="hotel-details">
+                <div class="price">Price: ₹2500/night</div>
+                <div>Hotel Manorama</div>
+                <div class="selectors">
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <select name="children">
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <select name="rooms">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <select name="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <img src="https://r1imghtlak.mmtcdn.com/198f2c75-f880-4283-94c3-ccec64e38fc4.jpg?&output-quality=75&downsize=328:180&crop=328:180;36,0&output-format=jpg" alt="Hotel Name" class="hotel-img">
+            <div class="hotel-details">
+                <div class="price">Price: ₹800/night</div>
+                <div>homestay</div>
+                <div class="selectors">
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <select name="children">
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <select name="rooms">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <select name="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+        
+    </ul>
+
+    <h2>Telangana</h2>
+    <h3>Hotels & HomeStays </h3>
+    <ul>
+        <li>
+            <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itckakatiya-hyderabad/images/overview-landing-page/headmast/desktop/exterior-dusk.png" alt="Hotel Name" class="hotel-img">
+            <div class="hotel-details">
+                <div class="price">Price: ₹10000/night</div>
+                <div>ITC Kakatiya - HYderabad</div>
+                <div class="selectors">
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <select name="children">
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <select name="rooms">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <select name="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcZs9OsnCKZNb8CzKLbKxQDQ4qRWDxkOUUw&s" alt="Hotel Name" class="hotel-img">
+            <div class="hotel-details">
+                <div class="price">Price: ₹5000/night</div>
+                <div>Red Fox by Lemon Tree Hotels, Hyderabad</div>
+                <div class="selectors">
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <select name="children">
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <select name="rooms">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <select name="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aumktqWcJui4s_5F31kPm7u8jS0E-j2ijQ&s" alt="Hotel Name" class="hotel-img">
+            <div class="hotel-details">
+                <div class="price">Price: ₹1000/night</div>
+                <div>Home stay</div>
+                <div class="selectors">
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                    <select name="children">
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                    </select>
+                    <select name="rooms">
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                    <select name="days">
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
