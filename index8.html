@@ -3,76 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehicle Rentals for Tourists</title>
+    <title>VoyageNest - Medico Trip Planner</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e9ecef;
-            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 20px;
             padding: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            color: #333;
+            background-color: #f9f9f9;
         }
         h1 {
+            font-family: "Magneto", cursive, sans-serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: navy;
             text-align: center;
-            color: #333;
-            margin-bottom: 40px;
         }
-        .vehicle {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-        }
-        .vehicle img {
-            max-width: 200px;
-            border-radius: 8px;
-            margin-right: 20px;
-        }
-        .vehicle-details {
-            flex-grow: 1;
-        }
-        .vehicle-details h2 {
-            margin: 0 0 10px;
+        h2 {
             color: #007bff;
-        }
-        .vehicle-details p {
-            margin: 5px 0;
-            color: #555;
-        }
-        .rate {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #28a745;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            font-size: 1em;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        #qr-code-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
-        #qr-code {
+        p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin-bottom: 10px;
+            list-style-type: square;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        .button-container {
+            text-align: left;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        input[type='button'] {
+            background-color: navy;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        input[type='button']:hover {
+            background-color: #001f4d;
+        }
+        .medico-section {
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .hospital-list {
+            cursor: pointer;
+        }
+        .doctor-list {
+            display: none;
             margin-top: 10px;
+        }
+        .doctor-list li {
+            margin-bottom: 5px;
+        }
+        .plan-trip-button {
+            text-decoration: none;
         }
         .note {
             text-align: center;
@@ -80,102 +77,69 @@
             font-size: 1.2em;
             color: #555;
         }
-        .back-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: #fff;
-            background-color: #6c757d;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .back-btn:hover {
-            background-color: #5a6268;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Vehicle Rentals for Tourists</h1>
+    <div class="button-container">
+        <input type="button" value="Back" onClick="history.go(-1)">
+        <a href="" class="home-button"><input type="button" value="Home"></a>
+    </div>
+    
+    <h1>VoyageNest</h1>
+    <h2>Medico Trip Planner for Andhra Pradesh and Telangana</h2>
 
-        <div class="vehicle">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Ow-jdSFfiCijZRPsQz6GQcoF61ahECtZMA&s" alt="Car">
-            <div class="vehicle-details">
-                <h2>Car</h2>
-                <p>Comfortable and convenient for small families or groups.</p>
-                <p class="rate">Rate: ₹3,500 per day</p>
-                <a href="#" class="btn" onclick="calculateRate(3500)">Rent Now</a>
-            </div>
-        </div>
+    <div class="medico-section">
+        <h3>Hospitals in Andhra Pradesh</h3>
+        <ul class="hospital-list">
+            <li><b>Apollo Hospital, Hyderabad</b></li>
+            <li><b>Care Hospital, Visakhapatnam</b></li>
+            <li><b>Yashoda Hospital, Secunderabad</b></li>
+            <li><b>Narayana Medical College & Hospital, Nellore</b></li>
+        </ul>
+        <ul class="doctor-list">
+            <li><b>Apollo Hospital, Hyderabad:</b> Dr. John Doe, Cardiologist</li>
+            <li><b>Care Hospital, Visakhapatnam:</b> Dr. Jane Smith, Neurologist</li>
+            <li><b>Yashoda Hospital, Secunderabad:</b> Dr. Mike Johnson, Oncologist</li>
+            <li><b>Narayana Medical College & Hospital, Nellore:</b> Dr. Sarah Brown, Pediatrician</li>
+        </ul>
+    </div>
 
-        <div class="vehicle">
-            <img src="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Hyundai-Alcazar-130720212215.jpg" alt="SUV">
-            <div class="vehicle-details">
-                <h2>SUV</h2>
-                <p>Spacious and perfect for off-road adventures.</p>
-                <p class="rate">Rate: ₹5,600 per day</p>
-                <a href="#" class="btn" onclick="calculateRate(5600)">Rent Now</a>
-            </div>
-        </div>
+    <div class="medico-section">
+        <h3>Hospitals in Telangana</h3>
+        <ul class="hospital-list">
+            <li><b>Care Hospital, Hyderabad</b></li>
+            <li><b>Medicover Hospital, Madhapur</b></li>
+            <li><b>Continental Hospital, Gachibowli</b></li>
+            <li><b>Global Hospital, Lakdi-ka-pul</b></li>
+        </ul>
+        <ul class="doctor-list">
+            <li><b>Care Hospital, Hyderabad:</b> Dr. William Taylor, Orthopedic Surgeon</li>
+            <li><b>Medicover Hospital, Madhapur:</b> Dr. Emily Green, Gynecologist</li>
+            <li><b>Continental Hospital, Gachibowli:</b> Dr. Robert White, Dermatologist</li>
+            <li><b>Global Hospital, Lakdi-ka-pul:</b> Dr. Olivia Clark, Psychiatrist</li>
+        </ul>
+    </div>
 
-        <div class="vehicle">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6jbW498h5YJy5D9ABZmmB9UiRtwTOUSERA&s" alt="Van">
-            <div class="vehicle-details">
-                <h2>Van</h2>
-                <p>Ideal for larger groups and families.</p>
-                <p class="rate">Rate: ₹7,000 per day</p>
-                <a href="#" class="btn" onclick="calculateRate(7000)">Rent Now</a>
-            </div>
-        </div>
-
-        <div class="vehicle">
-            <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/296512301/KC/YS/RW/187114653/yamaha-fz-x-ride-free-bike.jpg" alt="Bike">
-            <div class="vehicle-details">
-                <h2>Bike</h2>
-                <p>Perfect for solo travelers and quick trips around the city.</p>
-                <p class="rate">Rate: ₹1,400 per day</p>
-                <a href="#" class="btn" onclick="calculateRate(1400)">Rent Now</a>
-            </div>
-        </div>
-
-        <div class="vehicle">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYhnwaj228sTtxFaSHLYJ-HD_sWOIj3sVkdw&s" alt="Scooter">
-            <div class="vehicle-details">
-                <h2>Scooter</h2>
-                <p>Easy to maneuver and great for short distances.</p>
-                <p class="rate">Rate: ₹1,000 per day</p>
-                <a href="#" class="btn" onclick="calculateRate(1000)">Rent Now</a>
-            </div>
-        </div>
-
-        <div id="qr-code-container"></div>
-
-        <div class="note">
-            Please do the payment here
-        </div>
-        
-        <a href="file:///C:/Users/SRI/Desktop/projects/rought.html/main.html" class="back-btn">Back</a>
+    <div class="button-container">
+        <a href="file:///C:/Users/SRI/Desktop/projects/rought.html/hotel%20roms.html" class="plan-trip-button"><input type="button" value="Plan Your Trip"></a>
+    </div>
+    
+    <div class="note">
+        Please ensure to check the availability and book your appointments in advance.
     </div>
 
     <script>
-        function calculateRate(rate) {
-            const days = prompt("Enter the number of days:");
-            if (days !== null && days !== "") {
-                const totalCost = rate * parseInt(days);
-                alert(`The total cost for ${days} days is ₹${totalCost}`);
-
-                const qrCodeContainer = document.getElementById('qr-code-container');
-                qrCodeContainer.innerHTML = `
-                    <h2>pay and take screenshot After clicking ok</h2>
-                    <p>Website: voyagenest</p>
-                    <img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?data=voyagenest&size=150x150" alt="QR Code">
-                `;
-            }
-        }
+        // JavaScript for showing/hiding doctor lists on click
+        document.addEventListener('DOMContentLoaded', function() {
+            const hospitalLists = document.querySelectorAll('.hospital-list');
+            hospitalLists.forEach(function(list) {
+                list.addEventListener('click', function() {
+                    const doctorList = this.nextElementSibling;
+                    doctorList.style.display = doctorList.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
     </script>
 </body>
 </html>
+
