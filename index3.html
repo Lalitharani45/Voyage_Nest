@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Type Itineraries</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    h1 {
+        color: #4CAF50; /* Beach */
+    }
+    h2.beach {
+        color: #4CAF50; /* Beach */
+    }
+    h2.nature {
+        color: #2196F3; /* Nature */
+    }
+    h2.history {
+        color: #FF9800; /* History */
+    }
+    h2.cuisine {
+        color: #E91E63; /* Cuisine */
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    .day {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-left: 4px solid #4CAF50; /* Default color */
+    }
+    .day.nature {
+        border-left-color: #2196F3; /* Nature */
+    }
+    .day.history {
+        border-left-color: #FF9800; /* History */
+    }
+    .day.cuisine {
+        border-left-color: #E91E63; /* Cuisine */
+    }
+    .highlight {
+        font-weight: bold;
+    }
+    .activity {
+        margin-left: 20px;
+    }
+    .cta-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #4CAF50; /* Beach */
+        font-weight: bold;
+    }
+    .trip-block {
+        margin-bottom: 40px;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .grid-item {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 8px;
+        border-left: 4px solid #4CAF50; /* Default color */
+    }
+    .grid-item.nature {
+        border-left-color: #2196F3; /* Nature */
+    }
+    .grid-item.history {
+        border-left-color: #FF9800; /* History */
+    }
+    .grid-item.cuisine {
+        border-left-color: #E91E63; /* Cuisine */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Trip Type Itineraries</h1>
+    <p style="text-align: center;">Scroll to know your itinerary</p>
+
+    <!-- Beach Trip Itinerary -->
+    <div class="trip-block">
+        <h2 class="beach">Beach Trip Itinerary</h2>
+        <div class="grid-container">
+            <div class="grid-item beach">
+                <p>Day 1: Arrival and Beach Relaxation<br>Arrive at your beach destination and check into your accommodation. Spend the day relaxing on the beach, enjoying the sun and sea.</p>
+            </div>
+            <div class="grid-item beach">
+                <p>Day 2: Water Sports and Beach Activities<br>Start your day with exciting water sports activities such as snorkeling and jet skiing. Explore nearby islands or reefs.<br>Highlight: Sunset Cruise<br>End the day with a memorable sunset cruise along the coast.</p>
+            </div>
+            <div class="grid-item beach">
+                <p>Day 3: Local Markets and Seafood Delights<br>Visit local markets to experience the vibrant culture and try fresh seafood cuisine.<br>Highlight: Beach Hopping<br>Explore different beaches in the area, each with its own charm.</p>
+            </div>
+            <div class="grid-item beach">
+                <p>Day 4: Spa and Leisure<br>Indulge in a relaxing spa treatment or yoga session by the beach.<br>Highlight: Cultural Evening<br>Attend a cultural evening featuring traditional music and dance.</p>
+            </div>
+            <div class="grid-item beach">
+                <p>Day 5: Departure<br>Check out from your accommodation and depart from the beach paradise.<br>Take with you fond memories of your beach vacation!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nature Trip Itinerary -->
+    <div class="trip-block">
+        <h2 class="nature">Nature Trip Itinerary</h2>
+        <div class="grid-container">
+            <div class="grid-item nature">
+                <p>Day 1: Nature Trekking<br>Embark on a nature trekking adventure to scenic spots and viewpoints.</p>
+            </div>
+            <div class="grid-item nature">
+                <p>Day 2: Wildlife Safari and Bird Watching<br>Experience a thrilling wildlife safari and observe diverse bird species in their natural habitat.<br>Highlight: Nature Photography<br>Capture stunning photos of the flora and fauna.</p>
+            </div>
+            <div class="grid-item nature">
+                <p>Day 3: Botanical Gardens and National Parks<br>Visit botanical gardens and explore lush national parks with knowledgeable guides.<br>Highlight: Natural Hot Springs<br>Relax in natural hot springs surrounded by scenic landscapes.</p>
+            </div>
+            <div class="grid-item nature">
+                <p>Day 4: Outdoor Picnic and Stargazing<br>Enjoy an outdoor picnic amidst nature's beauty.<br>Highlight: Stargazing Night<br>Experience a magical night of stargazing under the clear sky.</p>
+            </div>
+            <div class="grid-item nature">
+                <p>Day 5: Departure<br>Say goodbye to the serene beauty of nature and depart with unforgettable memories.<br>Take with you a renewed appreciation for the wonders of the natural world!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Trip Itinerary -->
+    <div class="trip-block">
+        <h2 class="history">History Trip Itinerary</h2>
+        <div class="grid-container">
+            <div class="grid-item history">
+                <p>Day 1: Historical Monuments and Temples<br>Explore ancient temples and historical monuments with rich architectural heritage.</p>
+            </div>
+            <div class="grid-item history">
+                <p>Day 2: Museum Tours and Art Galleries<br>Visit museums and art galleries to delve into the region's cultural and artistic history.<br>Highlight: Guided Tour<br>Take a guided tour to learn about the stories behind the exhibits.</p>
+            </div>
+            <div class="grid-item history">
+                <p>Day 3: Archaeological Sites and Ancient Ruins<br>Discover ancient archaeological sites and ruins that offer glimpses into the past.<br>Highlight: Cultural Performance<br>Attend a cultural performance showcasing traditional music and dance.</p>
+            </div>
+            <div class="grid-item history">
+                <p>Day 4: Heritage Walks and City Tours<br>Embark on heritage walks through historic neighborhoods and city tours highlighting key landmarks.<br>Highlight: Culinary Exploration<br>Explore the local culinary scene with tastings of traditional dishes.</p>
+            </div>
+            <div class="grid-item history">
+                <p>Day 5: Departure<br>Bid farewell to the historical wonders and depart with a deeper understanding of the region's rich history.<br>Take with you memories of the fascinating journey through time!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cuisine Trip Itinerary -->
+    <div class="trip-block">
+        <h2 class="cuisine">Cuisine Trip Itinerary</h2>
+        <div class="grid-container">
+            <div class="grid-item cuisine">
+                <p>Day 1: Culinary Introduction<br>Start your culinary journey with a cooking class to learn traditional recipes.</p>
+            </div>
+            <div class="grid-item cuisine">
+                <p>Day 2: Street Food Exploration<br>Embark on a gastronomic adventure exploring local street food markets.<br>Highlight: Food Tasting<br>Taste a variety of delicious street snacks and treats.</p>
+            </div>
+            <div class="grid-item cuisine">
+                <p>Day 3: Fine Dining Experience<br>Enjoy an exquisite dining experience at renowned local restaurants.<br>Highlight: Wine or Brewery Tour<br>Take a tour of local wineries or breweries and enjoy tastings.</p>
+            </div>
+            <div class="grid-item cuisine">
+                <p>Day 4: Cooking Workshop and Cultural Cuisine<br>Participate in a cooking workshop focusing on regional specialties.<br>Highlight: Culinary Festivals<br>Attend culinary festivals celebrating local cuisine and traditions.</p>
+            </div>
+            <div class="grid-item cuisine">
+                <p>Day 5: Departure<br>Conclude your culinary adventure and depart with a newfound love for the local flavors.<br>Take with you recipes and memories of unforgettable culinary delights!</p>
+            </div>
+        </div>
+    </div>
+
+    <p style="text-align: center;"><a href="file:///C:/Users/SRI/Desktop/projects/rought.html/main.html" class="cta-link">Explore More Trip Experiences</a></p>
+</div>
+
+</body>
+</html>
