@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trip Type Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background: url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+    h1, h2 {
+        text-align: center;
+    }
+    .quiz-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+    .question-container {
+        background-color: #e0f7fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .question {
+        margin-bottom: 10px;
+    }
+    .options {
+        margin-bottom: 20px;
+    }
+    .option {
+        margin-bottom: 5px;
+    }
+    .btn-submit {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .result {
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .message {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .cta-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #4CAF50;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Trip Type Quiz</h1>
+
+    <div id="quiz">
+        <div class="question-container">
+            <div id="question" class="question"></div>
+            <div id="options" class="options"></div>
+        </div>
+        <button id="submit" class="btn-submit" onclick="submitAnswer()">Next Question</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div id="message" class="message" style="display: none;">
+        <p>You came to the perfect place to plan your vacation. Explore your ideal trip itinerary below!</p>
+        <a href="#" id="cta-link" class="cta-link" style="display: none;">Explore Your Itinerary</a>
+    </div>
+
+</div>
+
+<script>
+    const quizData = [
+        {
+            question: "What type of weather do you prefer?",
+            options: ["Warm and sunny", "Cool and breezy", "Devotional", "Varies depending on the activity"],
+            keywords: ["Beach", "Nature", "Spiritual", "Flexible"]
+        },
+        {
+            question: "Which activity do you enjoy the most?",
+            options: ["Relaxing on a beach", "Hiking in nature", "Exploring historical sites", "Trying local cuisine"],
+            keywords: ["Beach", "Nature", "History", "Cuisine"]
+        },
+        {
+            question: "How do you like to travel?",
+            options: ["Solo", "With a small group of friends", "With family", "Depends on the destination"],
+            keywords: ["Solo", "Friends", "Family", "Flexible"]
+        },
+        {
+            question: "What's your budget preference?",
+            options: ["Budget-friendly", "Moderate", "Luxury", "Flexible depending on the experience"],
+            keywords: ["Budget", "Moderate", "Luxury", "Flexible"]
+        },
+        {
+            question: "How important is cultural immersion to you?",
+            options: ["Not very important", "Somewhat important", "Very important", "I prefer a blend of cultures"],
+            keywords: ["Relaxed", "Adventurous", "Historic", "Culinary"]
+        }
+    ];
+
+    let currentQuestion = 0;
+    let selectedKeywords = [];
+
+    function loadQuestion() {
+        const question = quizData[currentQuestion];
+        document.getElementById("question").textContent = (currentQuestion + 1) + ". " + question.question;
+
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
+        question.options.forEach((option, index) => {
+            const optionElement = document.createElement("div");
+            optionElement.className = "option";
+            optionElement.innerHTML = `<input type="radio" name="option" value="${index}" id="option${index}"> <label for="option${index}">${option}</label>`;
+            optionsDiv.appendChild(optionElement);
+        });
+
+        document.getElementById("result").innerHTML = "";
+        document.getElementById("submit").textContent = "Next Question";
+    }
+
+    function submitAnswer() {
+        const selectedOption = document.querySelector('input[name="option"]:checked');
+        if (!selectedOption) {
+            alert("Please select an option.");
+            return;
+        }
+
+        const answerIndex = parseInt(selectedOption.value);
+        selectedKeywords.push(quizData[currentQuestion].keywords[answerIndex]);
+
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const tripTypes = ["Beach", "Nature", "History", "Cuisine"];
+        let maxScore = -1;
+        let resultType = "";
+
+        // Calculate the most selected keyword
+        const keywordCounts = selectedKeywords.reduce((acc, keyword) => {
+            acc[keyword] = (acc[keyword] || 0) + 1;
+            return acc;
+        }, {});
+
+        let maxCount = -1;
+        for (const keyword in keywordCounts) {
+            if (keywordCounts[keyword] > maxCount) {
+                maxCount = keywordCounts[keyword];
+                resultType = keyword;
+            }
+        }
+
+        document.getElementById("quiz").innerHTML = `<h2>Quiz Complete</h2><p>Your ideal trip type is: <strong>${resultType}</strong>.</p>`;
+        document.getElementById("message").style.display = "block";
+        document.getElementById("cta-link").style.display = "block";
+        
+        // Redirect to the corresponding itinerary based on resultType
+        let itineraryUrl = "itinerary.html#"; // Adjust URL as needed
+        switch (resultType.toLowerCase()) {
+            case "beach":
+                itineraryUrl += "beach";
+                break;
+            case "nature":
+                itineraryUrl += "nature";
+                break;
+            case "history":
+                itineraryUrl += "history";
+                break;
+            case "cuisine":
+                itineraryUrl += "cuisine";
+                break;
+            default:
+                break;
+        }
+
+        document.getElementById("cta-link").setAttribute("href", itineraryUrl);
+    }
+
+    // Start quiz on page load
+    window.onload = loadQuestion;
+</script>
+
+</body>
+</html>
