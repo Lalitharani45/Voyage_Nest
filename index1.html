@@ -178,21 +178,21 @@
         // Redirect to the corresponding itinerary based on resultType
         let index3Url = "index3.html"; // Adjust URL as needed
         switch (resultType.toLowerCase()) {
-            case "beach":
-                index3Url += "beach";
-                break;
-            case "nature":
-                index3Url += "nature";
-                break;
-            case "history":
-                index3Url += "history";
-                break;
-            case "cuisine":
-                index3yUrl += "cuisine";
-                break;
-            default:
-                break;
-        }
+    case "beach":
+        index3Url += "beach";
+        break;
+    case "nature":
+        index3Url += "nature";
+        break;
+    case "history":
+        index3Url += "history";
+        break;
+    case "cuisine":
+        index3Url += "cuisine";
+        break;
+    default:
+        break;
+}
 
         document.getElementById("cta-link").setAttribute("href", index3Url);
     }
